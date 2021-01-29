@@ -1,0 +1,150 @@
+section{
+    height: 100vh;
+    display: grid;
+    background-color: white;
+}
+
+.dentsu-section{
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.ablesoft-section{
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.box{
+    height: 100%;
+    display: grid;
+}
+
+.img-container{
+    /* height: 80%; */
+    width: 70%;
+    margin: auto;
+    /* border-radius: 25px; */
+    transition: all 0.4s;
+    box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+    position: relative;
+    bottom: 0px;
+}
+
+.img-container:hover{
+    box-shadow: 5px 5px 50px rgba(0,0,0,0.25);
+    bottom: 5px;
+}
+
+.text-box{
+    margin: auto;
+    max-width: 80%;
+}
+
+.company-logo{
+    object-fit: contain;
+}
+
+#about-container{
+    /* position: absolute; */
+    /* overflow: auto; */
+    height: 100%;
+    /* right: -15px; */
+}
+
+.intro{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.intro .text{
+    font-size: 32pt;
+    line-height: 36pt;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro .highlight{
+    color: #e31b6d;
+}
+
+.intro-btn{
+    cursor: pointer;
+    padding: 12px 50px 12px 20px;
+    font-size: 16pt;
+    color: #fff;
+    /* border-radius: 10px; */
+    border: 2px solid #fff;
+    transition: all 0.5s;
+}
+
+.intro-btn i{
+    position: absolute;
+    margin: 1px 0 0 10px;
+    transition: all 0.3s;
+}
+
+.intro-btn:hover{
+    background-color: #e31b6d;
+    border-color: #e31b6d;
+}
+
+.intro-btn:hover i{
+    transform: rotate(90deg);
+}
+
+.dentsu-text-box{
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+}
+
+.dentsu-text-box ul{
+    list-style: none;
+}
+
+.dentsu-text-box .role li::before{
+    content: "- "; 
+    /* color: red */
+}
+
+.dentsu-text-box h1{
+    display: inline;
+    /* border: 2px solid #F8BF2E; */
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    bottom: 0px;
+    transform: scale(1);
+}
+
+.dentsu-text-box h1:hover{
+    /* box-shadow: 5px 5px 50px rgba(0,0,0,0.25); */
+    background: linear-gradient(21.52deg, #EED99D 8.42%, #F8BF2E 91.47%);
+}
+
+.dentsu-text-box p{
+    padding-left: 11px;
+}
+
+.tech li{
+    display: inline;
+}
+
+.left-side{
+    opacity: 0 !important;
+    transform: translateX(-200px);
+}
+
+.right-side{
+    opacity: 0 !important;
+    transform: translateX(200px);
+}
+
+.info-box{
+    transition: all 1s;
+}

@@ -1,0 +1,36 @@
+.navigation-container{
+    position: fixed;
+    z-index: 1000;
+    height: 100px;
+    top: 10%;
+    right: 1%;
+    transition: all 1s;
+}
+
+.nav{
+    color: #fff;
+    border: solid 2px #e31b6d;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: all 1s;
+    display: grid;
+}
+
+.nav span{
+    margin: auto;
+}
+
+.nav1{
+    transform: translateY(94px);
+}
+
+.nav3{
+    transform: translateY(-94px);
+}
+
+.hideNav{
+    transform: translateX(150%);
+}

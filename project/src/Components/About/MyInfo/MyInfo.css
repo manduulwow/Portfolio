@@ -1,0 +1,107 @@
+#Manduul {
+    display: grid;
+}
+
+#Manduul .info-left{
+    border-right: 1px solid;
+}
+
+#Manduul .info-wrap{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 88%;
+    margin: auto;
+}
+
+.info-left .img-wrap{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.info-left .img-wrap img{
+    border-radius: 100%;
+}
+
+.info-left .info-text{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.info-right{
+    display: grid;
+}
+
+.info-right .graph-wrap{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+
+.info-right .graph-row{
+    height: 40px;
+    align-items: flex-end;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+
+.info-right .graph-label{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    float: left;
+    background-color: #04c2c9;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 10px;
+    width: 100px;
+}
+
+.graph-label span{
+    margin: auto;
+    letter-spacing: 1px;
+}
+
+.info-right .graph{
+    height: 100%;
+    float: left;
+    background-color: #00a1a7;
+    width: 0%;
+    transition: width 2s;
+}
+
+.moveGraph{
+    width: 90% !important;
+}
+
+.js{
+    width: 90% !important;
+}
+.react{
+    width: 90% !important;
+}
+.html{
+    width: 85% !important;
+}
+.css{
+    width: 80% !important;
+}
+.node{
+    width: 75% !important;
+}
+.python{
+    width: 65% !important;
+}
+.java{
+    width: 65% !important;
+}
+.ui{
+    width: 65% !important;
+}
+
+.info-right .graph-span{
+    float: right;
+    padding: 10px;
+}
