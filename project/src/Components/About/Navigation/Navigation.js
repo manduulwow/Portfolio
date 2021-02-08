@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './Navigation.css';
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-const Navigation = ({ scroller }) => {
-    const [splitNav, setSplitNav] = useState(false);
+let section = 0;
+
+const Navigation = ({ scroller, color, isScrolledDown}) => {
+    const [spinNav, setSpinNav] = useState(false);
+    const [moveNav, setMoveNav] = useState(false);
     const [showNav, setShowNav] = useState(false);
+    const scrollUp = () => {
+        if(section > 0) section--;
+        scroller.scrollTo(section, {
+            duration: 500,
+            delay: 100,
+            smooth: true,
+            offset: 1
+        });
+    }
 
-    const handleClick = (section) => {
+    const scrollDown = () => {
+        if(section < 3) {
+            section++;
+        }
+        console.log(section, 'Down')
         scroller.scrollTo(section, {
             duration: 500,
             delay: 100,
@@ -15,17 +32,26 @@ const Navigation = ({ scroller }) => {
     }
 
     useEffect(() => {
-        setShowNav(true);
         setTimeout(() => {
-            setSplitNav(true);
-        }, 1000);
+            setShowNav(true);
+            setSpinNav(true);
+        }, 500);
+
+        setTimeout(() => {
+            setMoveNav(true);
+        }, 1500);
     }, []);
 
     return(
-        <div className={`navigation-container ${showNav ? '' : 'hideNav'}`} >
-            <div className={`${splitNav ? '' : 'nav1'} nav`} onClick={() => handleClick('1')}><span>1</span></div>
-            <div className={`nav2 nav`} onClick={() => handleClick('2')}><span>2</span></div>
-            <div className={`${splitNav ? '' : 'nav3'} nav`} onClick={() => handleClick('3')}><span>3</span></div>
+        <div className={`navigation-container ${showNav ? '' : 'hideNav'}`}>
+            <AiOutlineLeft onClick={scrollUp} size={35} color={color} className={`nav-top nav ${spinNav ? '' : 'nav-1'}`} style={{transform : moveNav ? 'rotate(90deg) translateX(-30vh)':''}}/>
+            <div className={`indicators ${moveNav ? '' : 'hide-indicator'}`}>
+                <div style={{backgroundColor: color, opacity: (section == 0) ? 1:0.2}}></div>
+                <div style={{backgroundColor: color, opacity: (section == 1) ? 1:0.2}}></div>
+                <div style={{backgroundColor: color, opacity: (section == 2) ? 1:0.2}}></div>
+                <div style={{backgroundColor: color, opacity: (section == 3) ? 1:0.2}}></div>
+            </div>
+            <AiOutlineRight onClick={scrollDown} size={35} color={color} className={`nav-bottom nav ${spinNav ? '' : 'nav-2'}`} style={{transform : moveNav ? 'rotate(90deg) translateX(30vh)':''}}/>
         </div>
     )
 }

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './About.css';
 import DA from './img/DA.png';
 import ABLE from './img/able.jpg';
-import { scroller } from "react-scroll";
+import { scroller, animateScroll } from "react-scroll";
 import { FiArrowRight } from "react-icons/fi";
 import VizSensor from 'react-visibility-sensor';
 
@@ -10,11 +10,14 @@ import MyInfo from './MyInfo/MyInfo';
 import Navigation from './Navigation/Navigation';
 
 const About = () => {
+    const [isScrolledDown, setIsScrolledDown] = useState(false);
     const [showSection, setShowSection] = useState({
         dentsu: false,
         able: false
     })
+    const [navColor, setNavColor] = useState('');
     const scrollDown = () => {
+        setIsScrolledDown(true);
         scroller.scrollTo('1', {
             duration: 500,
             delay: 100,
@@ -23,14 +26,24 @@ const About = () => {
         });
     }
 
+    const getRandomInt = (max) => {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
     const isVisible = (visible, type) => {
+        const colors = ['#48C9B0', '#FFC300', '#FF5733'];
+        setNavColor(colors[getRandomInt(3)]);
         if (visible) {
             setShowSection({ ...showSection, [type]: true });
         }
     }
 
+    useEffect(() => {
+        animateScroll.scrollToTop();
+    }, []);
+
     return <div id="about-container" >
-        <section name="intro" className="intro">
+        <section name="0" className="intro">
             <div className="text">
                 Hello, I'm <span className="highlight">Manduul Enkhee</span>
                 <br></br>
@@ -120,7 +133,7 @@ systems or online software web platforms for organizations.</p>
             <MyInfo />
         </section>
 
-        <Navigation scroller={scroller}/>
+        <Navigation color={navColor} scroller={scroller} isScrolledDown={isScrolledDown} />
     </div>
 }
 
