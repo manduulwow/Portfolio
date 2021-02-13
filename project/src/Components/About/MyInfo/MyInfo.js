@@ -3,7 +3,7 @@ import './MyInfo.css';
 import Avatar from './img/1.jpg';
 import VizSensor from 'react-visibility-sensor';
 
-const MyInfo = () => {
+const MyInfo = ({setSection}) => {
     const [moveGraph, setMoveGraph] = useState(null);
     const [leftSide, setLeftSide] = useState('left-side');
     const [rightSide, setRightSide] = useState('right-side'); 
@@ -21,6 +21,7 @@ const MyInfo = () => {
             })
             setLeftSide('');
             setRightSide('');
+            setSection(3);
         }
     }
 

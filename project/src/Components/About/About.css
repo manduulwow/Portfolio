@@ -5,42 +5,82 @@ section{
 }
 
 .dentsu-section{
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .ablesoft-section{
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .box{
     height: 100%;
-    display: grid;
+    font-family: robotoBold;
 }
 
-.img-container{
-    /* height: 80%; */
-    width: 70%;
+.logo-container{
+    width: 35%;
     margin: auto;
-    /* border-radius: 25px; */
-    transition: all 0.4s;
-    box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-    cursor: pointer;
+    margin-top: 99px;
+}
+
+.text-container{
+    width: 78%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.text-container h1{
+    color: #165697;
+    font-size: 1.5em;
+    line-height: 35px;
+}
+
+.text-container h1 span{
+    font-family: robotoRegular;
+    font-size: 0.5em;
+    line-height: 16px;
+    color: #464646;
     position: relative;
-    bottom: 0px;
+    bottom: 3px;
+    left: 3px;
 }
 
-.img-container:hover{
-    box-shadow: 5px 5px 50px rgba(0,0,0,0.25);
-    bottom: 5px;
+.text-container p{
+    font-family: robotoRegular;
+    font-size: 1em;
+    line-height: 23px;
+    color: #464646;
 }
 
-.text-box{
+.text-container p:last-child{
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.text-container .svg-container{
+    width: 55px;
     margin: auto;
-    max-width: 80%;
 }
 
-.company-logo{
-    object-fit: contain;
+.text-container .logo-box .tech-name{
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    font-family: robotoRegular;
+    text-align: center;
+}
+
+.text-container .tech-logo-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.company-logo, .logo-box img, .box-img{
+    object-fit: cover;
+}
+
+.text-container .logo-box a{
+    text-decoration: none;
 }
 
 #about-container{
@@ -94,41 +134,6 @@ section{
 
 .intro-btn:hover i{
     transform: rotate(90deg);
-}
-
-.dentsu-text-box{
-    border-left: 1px solid #ddd;
-    padding-left: 40px;
-}
-
-.dentsu-text-box ul{
-    list-style: none;
-}
-
-.dentsu-text-box .role li::before{
-    content: "- "; 
-    /* color: red */
-}
-
-.dentsu-text-box h1{
-    display: inline;
-    /* border: 2px solid #F8BF2E; */
-    padding: 10px;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s;
-    bottom: 0px;
-    transform: scale(1);
-}
-
-.dentsu-text-box h1:hover{
-    /* box-shadow: 5px 5px 50px rgba(0,0,0,0.25); */
-    background: linear-gradient(21.52deg, #EED99D 8.42%, #F8BF2E 91.47%);
-}
-
-.dentsu-text-box p{
-    padding-left: 11px;
 }
 
 .tech li{

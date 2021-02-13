@@ -1,11 +1,16 @@
 @font-face{
-  font-family: ubuntuLight;
-  src: url('./Fonts/Ubuntu-Light.ttf');
+  font-family: robotoLight;
+  src: url('./Fonts/Roboto-Light.ttf');
 }
 
 @font-face{
-  font-family: ubuntuRegular;
-  src: url('./Fonts/Ubuntu-Regular.ttf');
+  font-family: robotoRegular;
+  src: url('./Fonts/Roboto-Regular.ttf');
+}
+
+@font-face{
+    font-family: robotoBold;
+    src: url('./Fonts/Roboto-Bold.ttf');
 }
 
 img{
@@ -22,13 +27,13 @@ section{
 }
 
 body{
-  font-family: 'ubuntuRegular';
+  font-family: 'robotoRegular';
   font-size: 12pt;
   overflow-x: hidden;
 }
 
 .btn{
-  font-family: 'ubuntuLight';
+  font-family: 'robotoLight';
 }
 
 .object{
