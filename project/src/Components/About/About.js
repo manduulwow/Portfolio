@@ -19,6 +19,7 @@ import Navigation from './Navigation/Navigation';
 
 const About = () => {
     const [section, setSection] = useState(0);
+    const [showIntroText, setShowIntroText] = useState(false);
     const [showSection, setShowSection] = useState({
         dentsu: false,
         able: false
@@ -44,17 +45,21 @@ const About = () => {
 
     useEffect(() => {
         animateScroll.scrollToTop();
+        let timer1 = setTimeout(() => setShowIntroText(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
     }, []);
 
     return <div id="about-container" >
         <VizSensor onChange={(visible) => isVisible(visible, 'start', 0)} partialVisibility={'top'} minTopValue={400} offset={300}>
             <section name="0" className="intro">
-                <div className="text">
+                <div className={`text ${showIntroText ? '' : 'hideIntro'}`}>
                     Hello, I'm <span className="highlight">Manduul Enkhee</span>
                     <br></br>
                 I'm Fullstack/Frontend Engineer
             </div>
-                <div className="intro-btn btn" onClick={scrollDown}>
+                <div className={`intro-btn btn ${showIntroText ? '' : 'hideIntro'}`} onClick={scrollDown}>
                     My Experience
                 <i><FiArrowRight size={25} /></i>
                 </div>
@@ -62,12 +67,12 @@ const About = () => {
         </VizSensor>
         <VizSensor onChange={(visible) => isVisible(visible, 'dentsu', 1)} partialVisibility={'top'} minTopValue={300} offset={100}>
             <section name="1" className="dentsu-section" id="dentsu">
-                <div className={`box-left box info-box ${showSection.dentsu ? '' : 'left-side'}`}>
+                <div className={`box-left box about-img info-box ${showSection.dentsu ? '' : 'left-side'}`}>
                     <img src={spaceImage} alt="spaceImage" />
                 </div>
                 <div className={`box-right info-box box ${showSection.dentsu ? '' : 'right-side'}`}>
                     <div className="logo-container">
-                        <img src={DA} alt="Dentsu" className="company-logo" className="box-img" />
+                        <img src={DA} alt="Dentsu" className="company-logo box-img" />
                     </div>
                     <div className="text-container">
                         <h1>Dentsu Data Artist Mongolia <span>2018 - 2019</span></h1>
@@ -152,7 +157,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`box-right box info-box ${showSection.able ? '' : 'right-side'}`}>
+                <div className={`box-right about-img box info-box ${showSection.able ? '' : 'right-side'}`}>
                     <img src={spaceImage2} alt="spaceImage" className="box-img" />
                 </div>
             </section>

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './MyInfo.css';
-import Avatar from './img/1.jpg';
+import Avatar from './img/2.jpg';
 import VizSensor from 'react-visibility-sensor';
+import linkedinLogo from '../img/logos_linkedin.svg';
 
-const MyInfo = ({setSection}) => {
+const MyInfo = ({ setSection }) => {
     const [moveGraph, setMoveGraph] = useState(null);
     const [leftSide, setLeftSide] = useState('left-side');
-    const [rightSide, setRightSide] = useState('right-side'); 
+    const [rightSide, setRightSide] = useState('right-side');
     const isVisible = (visible) => {
         if (visible) {
             setMoveGraph({
@@ -31,13 +32,18 @@ const MyInfo = ({setSection}) => {
                 <div className="info-wrap">
                     <div className={`info-left info-box ${leftSide}`}>
                         <div className="img-wrap">
-                            <img src={Avatar} alt="avatar"/>
+                            <img src={Avatar} alt="avatar" />
                         </div>
                         <div className="info-text">
                             <h1>Who is this guy?</h1>
                             <p>I'm a Frontend/Fullstack Developer.</p>
                             <p>I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
                             <p>I like problem solving and <a style={{ textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer" href="https://en.wikipedia.org/wiki/Competitive_programming">Competitive programming</a></p>
+                            <a href="https://www.linkedin.com/in/manduul-enkhee">
+                                <div style={{ maxWidth: 150, margin: 'auto' }}>
+                                    <img src={linkedinLogo} alt="linkedinLogo" />
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div className={`info-right info-box ${rightSide}`}>

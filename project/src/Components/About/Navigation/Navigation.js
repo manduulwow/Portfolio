@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Navigation.css';
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-// let section = 0;
-
 const Navigation = ({ scroller, color, section, setSection }) => {
-    console.log(section, ' Section');
     const [spinNav, setSpinNav] = useState(false);
     const [moveNav, setMoveNav] = useState(false);
     const [showNav, setShowNav] = useState(false);
